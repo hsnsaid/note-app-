@@ -18,14 +18,20 @@ class Controller{
     }
     public function check($file){
         $user=new \Model\UserModel();
-        $result=$user->check($_POST['email'],$_POST['password']);
-        if($result==false){
+        $id=$user->check($_POST['email'],$_POST['password']);
+        if($id==false){
             $view = new \Views\Views("404");
             exit();
         }
         session_start();
         $_SESSION['user_id']=$id;
         $_SESSION['status']=true;
+        header('Location: UIs/Home.html');
+    }
+    public function add($file){
+        session_start();
+        $note=new \Model\noteModel();
+        $id=$note->add($_POST['category'],$_POST['date'],$_POST['content'],$_SESSION['user_id']);
         $view = new \Views\Views($file);
     }
 	public function logout()

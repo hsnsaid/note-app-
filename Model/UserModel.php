@@ -12,7 +12,7 @@ class UserModel extends Instance{
     }
     public function check(string $email,string $password){
         $result=$this->db->show("user",["id"],["password"=>$password,"email"=>$email]);
-        return $result;
+        return $result[0]['id'];
     }
-    
+
 }
