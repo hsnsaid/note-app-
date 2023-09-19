@@ -6,5 +6,4 @@ class Views{
     public function __Construct($file){
         require $this->dir . "$file.html";
     }
-    
 }

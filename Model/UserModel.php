@@ -14,5 +14,4 @@ class UserModel extends Instance{
         $result=$this->db->show("user",["id"],["password"=>$password,"email"=>$email]);
         return $result[0]['id'];
     }
-
 }
