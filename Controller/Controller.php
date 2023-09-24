@@ -49,6 +49,14 @@ class Controller{
         $category=$note->show_category($_SESSION['user_id']);
         require  __DIR__ . "/../Views/" . "$file.php";
     }
+    public function update($file){
+        session_start();
+        $note=new \Model\noteModel();
+        $data=$note->update($_GET['id'],$_GET['status']);
+        $data=$note->show($_SESSION['user_id']);
+        $category=$note->show_category($_SESSION['user_id']);
+        require  __DIR__ . "/../Views/" . "$file.php";
+    }
     public function search_post($file){
         session_start();
         $note=new \Model\noteModel();

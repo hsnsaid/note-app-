@@ -18,4 +18,12 @@ class noteModel extends Instance{
         $result=$this->db->delete("note",["id"=>$id]);
         return $result;
     }
+    public function update($id,string $status){
+        if($status=="completed"){
+        $result=$this->db->update("note","status='not_completed'",["id"=>$id]);
+        return $result;
+        }
+        $result=$this->db->update("note","status='completed'",["id"=>$id]);
+        return $result;
+    }
 }
