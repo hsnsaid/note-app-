@@ -14,7 +14,7 @@ class Controller{
         session_start();
         $_SESSION['user_id']=$id;
         $_SESSION['status']=true;
-        header("location: $file.html");
+        header("Location: $file.html");
     }
     public function check($file){
         $user=new \Model\UserModel();
@@ -26,50 +26,75 @@ class Controller{
         session_start();
         $_SESSION['user_id']=$id;
         $_SESSION['status']=true;
-        header("location: $file.html");    
-    }
-    public function add($file){
-        session_start();
-        $note=new \Model\noteModel();
-        $id=$note->add($_POST['category'],$_POST['date'],$_POST['content'],$_SESSION['user_id'],$_POST['title']);
-        $view = new \Views\Views($file);
+        header("Location: $file.html");    
     }
     public function show($file){
         session_start();
+        if(!isset($_SESSION['status'])){
+            header("Location: signin.html");    
+        }
+        else{
         $note=new \Model\noteModel();
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
         require  __DIR__ . "/../Views/" . "$file.php";
+        }
+    }
+    public function add($file){
+        session_start();
+        if(!isset($_SESSION['status'])){
+            header("Location: signin.html");    
+        }
+        else{
+        $note=new \Model\noteModel();
+        $id=$note->add($_POST['category'],$_POST['date'],$_POST['content'],$_SESSION['user_id'],$_POST['title']);
+        $view = new \Views\Views($file);
+        }
     }
     public function delete($file){
         session_start();
+        if(!isset($_SESSION['status'])){
+            header("Location: signin.html");    
+        }
+        else{
         $note=new \Model\noteModel();
         $data=$note->delete($_GET['id']);
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
         require  __DIR__ . "/../Views/" . "$file.php";
+        }
     }
     public function update($file){
         session_start();
+        if(!isset($_SESSION['status'])){
+            header("Location: signin.html");    
+        }
+        else{
         $note=new \Model\noteModel();
         $data=$note->update($_GET['id'],$_GET['status']);
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
         require  __DIR__ . "/../Views/" . "$file.php";
+        }
     }
     public function search_post($file){
         session_start();
+        if(!isset($_SESSION['status'])){
+            header("Location: signin.html");    
+        }
+        else{
         $note=new \Model\noteModel();
         $data=$note->show($_SESSION['user_id']);
         $search=$_POST['search'];
         require  __DIR__ . "/../Views/" . "$file.php";
+        }
     }
 	public function logout()
 	{
 		session_start();
 		session_unset();
 		session_destroy();
-		header('location: ./');
+		header('Location: ./');
 		exit;
 	}
 }

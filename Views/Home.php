@@ -7,12 +7,13 @@
     <title>Home</title>
 </head>
 <body class="bg-gray-200">
-    <header class="flex w-full gap-5 py-3 bg-white shadow-lg px-28">
+    <header class="flex w-full gap-5 py-3 bg-white shadow-lg px-28 ">
         <form method="post" class="w-10/12">
             <input type="text" name="search" placeholder="search" class="w-full px-4 py-2 text-base text-gray-600 bg-gray-200 rounded-sm outline-0">
         </form>
         <button class="px-6 text-sm font-semibold text-white rounded-full bg-emerald-500 hover:bg-emerald-600 ">+<a href="add_note.html" class="ml-1">Add</a></button>
         <img src="images/welcome.jpg" alt="" srcset="" class="h-10 rounded-full cursor-pointer">
+        <a href="logout.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-9"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg></a>
     </header>
     <main class="container py-6 px-28">
         <h3 class="mb-2 text-2xl font-semibold text-gray-800">Your notes</h3>

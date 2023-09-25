@@ -24,6 +24,7 @@ $route->get("/project/note_app/delete.html",[Controller::class,"delete","Home"])
 $route->get("/project/note_app/upadate.html",[Controller::class,"update","Home"]);
 $route->post("/project/note_app/upadate.html",[Controller::class,"search_post","search"]);
 $route->post("/project/note_app/delete.html",[Controller::class,"search_post","search"]);
+$route->get("/project/note_app/logout.html",[Controller::class,"logout"]);
 
 (new App($route,
 ["uri" =>$_SERVER["REQUEST_URI"] ,"method"=> $_SERVER["REQUEST_METHOD"]]
