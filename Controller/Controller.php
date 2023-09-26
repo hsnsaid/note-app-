@@ -32,6 +32,7 @@ class Controller{
         session_start();
         if(!isset($_SESSION['status'])){
             header("Location: signin.html");    
+            exit; 
         }
         else{
         $note=new \Model\noteModel();
@@ -40,21 +41,27 @@ class Controller{
         $view = new \Views\Views($file,["category"=>$category,"data"=>$data]);
         }
     }
-    public function add($file){
-        session_start();
-        if(!isset($_SESSION['status'])){
-            header("Location: signin.html");    
-        }
-        else{
-        $note=new \Model\noteModel();
-        $id=$note->add($_POST['category'],$_POST['date'],$_POST['content'],$_SESSION['user_id'],$_POST['title']);
-        $view = new \Views\Views($file);
+    public function add($file) {
+        session_start();        
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: signin.html");
+            exit; 
+        } else {
+            $note = new \Model\noteModel();
+            $category = $_POST['category'];
+            $content = $_POST['content'];
+            $title = $_POST['title'];
+            if (\App_Core\Validator::string($category, 1, 20) && \App_Core\Validator::string($content, 1, 100) && \App_Core\Validator::string($title, 1, 20)) {
+                $id = $note->add($category, $_POST['date'], $content, $_SESSION['user_id'], $title);
+            }    
+            $view = new \Views\Views($file);
         }
     }
     public function delete($file){
         session_start();
         if(!isset($_SESSION['status'])){
             header("Location: signin.html");    
+            exit; 
         }
         else{
         $note=new \Model\noteModel();
@@ -68,6 +75,7 @@ class Controller{
         session_start();
         if(!isset($_SESSION['status'])){
             header("Location: signin.html");    
+            exit; 
         }
         else{
         $note=new \Model\noteModel();
@@ -81,6 +89,7 @@ class Controller{
         session_start();
         if(!isset($_SESSION['status'])){
             header("Location: signin.html");    
+            exit; 
         }
         else{
         $note=new \Model\noteModel();

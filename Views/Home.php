@@ -24,7 +24,7 @@
               </a>
               <?php foreach($data["category"] as $nav){?>              
               <a href="Home_fillter.html?category=<?php echo $nav["category"]?>" class="inline-flex items-center justify-center w-1/2 py-3 font-medium leading-none tracking-wider border-b-2 border-gray-200 cursor-pointer sm:px-6 sm:w-auto sm:justify-start title-font hover:text-emerald-500">
-                <?php echo ($nav["category"]) ?>
+                <?php  echo htmlspecialchars(($nav["category"])) ?>
               </a>
               <?php }?>
             </div>
@@ -37,7 +37,7 @@
                     <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
                       <div class="flex justify-between w-full">
                         <div class="inline-flex items-center justify-center h-10 px-3 mb-2 text-green-500 bg-green-100 rounded-full">
-                            <p><?php echo $row["category"]?></p>
+                            <p><?php echo htmlspecialchars($row["category"])?></p>
                         </div>
                         <div class="flex gap-5">
                           <?php if($row['status']=="not_completed"){?>
@@ -57,9 +57,9 @@
                           </a>
                         </div>
                       </div>
-                      <h2 class="mb-2 text-lg font-medium text-gray-900 title-font"><?php echo $row["title"]?></h2>
-                      <p class="text-base leading-relaxed"><?php echo $row["content"]?></p>
-                      <p class="mt-1 text-sm leading-relaxed text-right"><?php echo $row["date"]?></p>
+                      <h2 class="mb-2 text-lg font-medium text-gray-900 title-font"><?php echo htmlspecialchars($row["title"])?></h2>
+                      <p class="text-base leading-relaxed"><?php echo htmlspecialchars($row["content"])?></p>
+                      <p class="mt-1 text-sm leading-relaxed text-right"><?php echo htmlspecialchars($row["date"])?></p>
                     </div>
                 </div>
                 <?php }?>

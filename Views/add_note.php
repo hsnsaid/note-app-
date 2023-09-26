@@ -25,17 +25,17 @@
             <form method="post" class="flex flex-wrap -m-2">
               <div class="w-1/2 p-2">
                   <label for="category" class="text-sm font-semibold leading-7 text-gray-600">Category</label>
-                  <input type="text" id="category" name="category" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
+                  <input type="text" id="category" name="category" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" required>
               </div>
               <div class="w-1/2 p-2">
                   <label for="date" class="text-sm font-semibold leading-7 text-gray-600">Date</label>
-                  <input type="date" id="date" name="date" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
+                  <input type="date" id="date" name="date" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" required>
               </div>
               <div class="w-full p-2">
                 <label for="title" class="text-sm font-semibold leading-7 text-gray-600">Title</label>
-                <input type="text" id="title" name="title" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
+                <input type="text" id="title" name="title" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" required>
                   <label for="content" class="text-sm font-semibold leading-7 text-gray-600">content</label>
-                  <textarea id="content" name="content" class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"></textarea>
+                  <textarea id="content" name="content" class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-indigo-200" required></textarea>
               </div>
               <div class="w-full p-2">
                 <button class="flex px-8 py-2 mx-auto text-lg text-white border-0 rounded bg-emerald-500 focus:outline-none hover:bg-emerald-600">Button</button>
