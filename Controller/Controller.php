@@ -37,7 +37,7 @@ class Controller{
         $note=new \Model\noteModel();
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
-        require  __DIR__ . "/../Views/" . "$file.php";
+        $view = new \Views\Views($file,["category"=>$category,"data"=>$data]);
         }
     }
     public function add($file){
@@ -58,10 +58,10 @@ class Controller{
         }
         else{
         $note=new \Model\noteModel();
-        $data=$note->delete($_GET['id']);
+        $note->delete($_GET['id']);
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
-        require  __DIR__ . "/../Views/" . "$file.php";
+        $view = new \Views\Views($file,["category"=>$category,"data"=>$data]);
         }
     }
     public function update($file){
@@ -74,7 +74,7 @@ class Controller{
         $data=$note->update($_GET['id'],$_GET['status']);
         $data=$note->show($_SESSION['user_id']);
         $category=$note->show_category($_SESSION['user_id']);
-        require  __DIR__ . "/../Views/" . "$file.php";
+        $view = new \Views\Views($file,["category"=>$category,"data"=>$data]);
         }
     }
     public function search_post($file){
@@ -86,7 +86,7 @@ class Controller{
         $note=new \Model\noteModel();
         $data=$note->show($_SESSION['user_id']);
         $search=$_POST['search'];
-        require  __DIR__ . "/../Views/" . "$file.php";
+        $view = new \Views\Views($file,["search"=>$search,"data"=>$data]);
         }
     }
 	public function logout()

@@ -22,7 +22,7 @@
               <a href="" class="inline-flex items-center justify-center w-1/2 text-sm font-medium leading-none tracking-wider border-b-2 rounded-t cursor-pointer text-emerald-500 border-emerald-500 sm:px-6 sm:w-auto sm:justify-start">
                 ALL
               </a>
-              <?php foreach($category as $nav){?>              
+              <?php foreach($data["category"] as $nav){?>              
               <a href="Home_fillter.html?category=<?php echo $nav["category"]?>" class="inline-flex items-center justify-center w-1/2 py-3 font-medium leading-none tracking-wider border-b-2 border-gray-200 cursor-pointer sm:px-6 sm:w-auto sm:justify-start title-font hover:text-emerald-500">
                 <?php echo ($nav["category"]) ?>
               </a>
@@ -32,7 +32,7 @@
         <section class="text-gray-600 body-font">
             <div class="container px-5 pt-5 mx-auto">
               <div class="flex flex-wrap -m-4">
-                <?php foreach($data as $row){?>
+                <?php foreach($data["data"] as $row){?>
                 <div class="p-4 xl:w-1/3 md:w-1/2">
                     <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
                       <div class="flex justify-between w-full">

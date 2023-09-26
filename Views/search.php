@@ -21,7 +21,7 @@
         <section class="text-gray-600 body-font">
             <div class="container px-5 pt-5 mx-auto">
                 <div class="flex flex-wrap -m-4">
-                <?php foreach($data as $row){ if($row["title"]==$search){?>
+                <?php foreach($data["data"] as $row){ if($row["title"]==$data["search"]){?>
                     <div class="p-4 xl:w-1/3 md:w-1/2">
                         <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
                             <div class="flex justify-between w-11/12">

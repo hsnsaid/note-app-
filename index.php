@@ -11,20 +11,21 @@ $route=new Route();
 $route->get("/project/note_app/",[Controller::class,"file","signin"]);
 $route->get("/project/note_app/login.html",[Controller::class,"file","login"]);
 $route->get("/project/note_app/signin.html",[Controller::class,"file","signin"]);
+$route->get("/project/note_app/add_note.html",[Controller::class,"file","add_note"]);
+$route->get("/project/note_app/Home.html",[Controller::class,"show","Home"]);
+$route->get("/project/note_app/Home_fillter.html",[Controller::class,"show","Home_fillter"]);
+$route->get("/project/note_app/delete.html",[Controller::class,"delete","Home"]);
+$route->get("/project/note_app/upadate.html",[Controller::class,"update","Home"]);
+$route->get("/project/note_app/logout.html",[Controller::class,"logout"]);
+
 $route->post("/project/note_app/login.html",[Controller::class,"check","Home"]);
 $route->post("/project/note_app/",[Controller::class,"create","Home"]);
 $route->post("/project/note_app/signin.html",[Controller::class,"create","Home"]);
 $route->post("/project/note_app/add_note.html",[Controller::class,"add","add_note"]);
-$route->get("/project/note_app/add_note.html",[Controller::class,"file","add_note"]);
-$route->get("/project/note_app/Home.html",[Controller::class,"show","Home"]);
-$route->get("/project/note_app/Home_fillter.html",[Controller::class,"show","Home_fillter"]);
 $route->post("/project/note_app/Home.html",[Controller::class,"search_post","search"]);
 $route->post("/project/note_app/Home_fillter.html",[Controller::class,"search_post","search"]);
-$route->get("/project/note_app/delete.html",[Controller::class,"delete","Home"]);
-$route->get("/project/note_app/upadate.html",[Controller::class,"update","Home"]);
 $route->post("/project/note_app/upadate.html",[Controller::class,"search_post","search"]);
 $route->post("/project/note_app/delete.html",[Controller::class,"search_post","search"]);
-$route->get("/project/note_app/logout.html",[Controller::class,"logout"]);
 
 (new App($route,
 ["uri" =>$_SERVER["REQUEST_URI"] ,"method"=> $_SERVER["REQUEST_METHOD"]]
